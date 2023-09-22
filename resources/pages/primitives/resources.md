@@ -154,50 +154,6 @@ The only thing that changes is the import.
 
 -->
 
----
-layout: default
-transition: fade
----
-
-<div class="slide-category">What's a Resource?</div> 
-<div class="related-note">What does a resource look like?</div>
-<br>
-<br>
-
-```gjs 
-import { resource } from 'ember-resources';
-
-export const SomeResource = resource(() => {
-    /* 
-     * set up initial state
-     * --------------------
-     */
-
-    /* 
-     * optional cleanup
-     * --------------------
-     */
-
-    /*
-     * Return reactive cell or function that returns a value
-     * --------------------
-     */
-});
-```
-
-<!-- 
-
-This is the anatomy or layout of a Resource.
-
-You set up initial state, 
-
-(pause)  
-provide optional cleanup
-
-(pause)  
-and then return the value.
-
--->
 
 ---
 layout: default
@@ -257,6 +213,8 @@ there is nothing magic going on here that a user of this would need to be concer
 
 
 When Resources land natively in ember this wrapping "resourceFactory" won't be needed. 
+
+But I think I can figure out a babel plugin that allows you to use plain functions instead of resourceFactory, if folks are interested. 
 
 -->
 
@@ -779,3 +737,138 @@ And it renders in a component the exact same way
 
 
 -->
+
+
+---
+transition: fade-out
+layout: center
+---
+
+<div class="slide-category">What's a Resource?</div> 
+
+# Resources derive data 
+
+
+<!-- 
+
+Data derivation is a pattern of managing the flow of data so that - simultaneously, 
+rendering, testing, and maintenance are easier.
+
+-->
+
+
+
+---
+transition: fade
+layout: two-cols 
+---
+
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources derive data</div>
+
+::left::
+
+```js
+class Demo extends Component {
+  // bunch of tracked properties
+
+  // the actual method
+  fetchData = () => {
+    this.isLoading = true;
+
+    try {
+        // etc
+    } finally {
+        this.isLoading = false;
+    }
+  }
+}
+```
+```hbs
+<div {{did-update this.fetchData @someData}}>
+</div>
+```
+<div v-click="1" style="position: fixed; top: 5rem; left: 4rem; font-size: 2rem; background: rgba(0,0,0,0.8); transform: rotate(-4deg); padding: 0 1rem">
+🚫 Leaky Abstraction
+</div>
+
+::right::
+
+<div v-click="2">
+
+```gjs
+function FetchData(url) {
+  return resource(({ on }) => {
+    let state = new TrackedObject();
+    // ...
+    return state;
+  });
+}
+
+<template>
+    {{#let (FetchData @someData as |request|}}
+        {{request.isLoading}}
+    {{/let}}
+</template>
+```
+
+<div v-click="3" style="position: fixed; top: 5rem; right: 4rem; font-size: 2rem; background: rgba(0,0,0,0.8); transform: rotate(-4deg); padding: 0 1rem;">
+✅ Encapsulated
+</div>
+
+</div>
+
+
+<div v-click="4">
+
+```gjs
+setupMSW(hooks);
+
+test('FetchData works', async function (assert) {
+  render(<template>
+    {{#let (FetchData "..." as |request|}}
+        <i data-loading>{{request.isLoading}}</i>
+    {{/let}}
+  </template>);
+
+  await renderSettled();
+
+  assert.dom('[data-loading]').hasText('true');
+});
+```
+
+</div>
+
+<!-- 
+
+Many may be familiar with the problem on the left,
+you need to do "something" when "someData" changes, 
+so you happen to know about these lifecycle modifiers, 
+but they feel kinda dirty, because you don't *really* need an element, 
+but you do it anyway, because it's what you know.
+
+!!click 
+
+This is a *leaky abstraction*
+- not only is it goofy (we know this)
+- the responsibilities of your function are leaking in to your component
+- you can't unit test it (because components can't be unit tested)
+- cleanup was probably forgotten (you can't really interact with `this` on a component after it's been un-rendered)
+
+
+!! click
+
+But there is another way!
+With resources, you can simultaneously solve all of the above
+
+
+It's encapsulated, it doesn't require managing state on your component.
+
+!! click
+
+
+And it can be easily unit tested.
+
+-->
+
+

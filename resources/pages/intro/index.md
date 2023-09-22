@@ -5,13 +5,15 @@ layout: full
 
 # Introduction
 
-<br><br><br>
-<div class="grid gap-2 grid-flow-col min-content">
+<div class="flex gap-2 flex-wrap" style="width: 400px; font-size: 2rem;">
+<fa6-brands-youtube /> 
+<fa6-brands-tiktok /> 
 <fa6-brands-twitter /> 
 <fa6-brands-discord /> 
 <fa6-brands-github-alt /> 
 <fa6-brands-discourse /> 
 <fa6-brands-gitlab /> 
+<br />
 <fa6-brands-steam /> 
 <fa6-brands-reddit-alien /> 
 <fa6-brands-npm /> 
@@ -26,11 +28,6 @@ layout: full
 ## @NullVoxPopuli
 
 <style>
-  .avatar {
-    position: fixed;
-    right: 1rem;
-    top: 1rem;
-  }
   .qr-code-footer { position: fixed; bottom: 1rem; right: 1rem; }
 </style>
 
@@ -40,40 +37,19 @@ layout: full
 
 </div>
 
-<div class="qr-code-list qr-code-footer">
-
-<QRCode value="https://nullvoxpopuli.com" size="150">
-  Blog
+<div style="position: fixed; right: 1rem; top: 1rem;">
+<QRCode value="https://linktr.ee/nullvoxpopuli" size="500">
+  My Linktree
 </QRCode>
-<QRCode value="https://github.com/nullvoxpopuli" size="150">
-  GitHub
-</QRCode>
-<QRCode value="https://twitter.com/nullvoxpopuli" size="150">
-  Twitter
-</QRCode>
-<QRCode value="https://tutorial.glimdown.com" size="150">
-  
-_The Tutorial_
-
-</QRCode>
-<QRCode value="https://limber.glimdown.com" size="150">
-  
-_REPL_
-
-</QRCode>
-<QRCode value="https://ember-primitives.pages.dev/" size="150">
-
-ember-primitives
-
-</QRCode>
-
 </div>
+
+
 
 <!-- 
 
 Online, you can find me @NullVoxPopuli everywhere
 
-At the bottom here are some of my links and personal projects
+On the right is my linktree.
 
 -->
 

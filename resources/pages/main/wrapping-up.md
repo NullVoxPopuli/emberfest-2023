@@ -1,29 +1,70 @@
 ---
 transition: fade
+layout: section
+---
+
+# Wrapping up
+
+
+<!--
+Wrapping up
+-->
+
+---
+transition: fade
+layout: section
+---
+
+<h1 v-click style="font-size: 4rem !important">ARE</h1>
+<h1 v-click style="font-size: 4rem !important">EFF</h1>
+<h1 v-click style="font-size: 4rem !important">SEA</h1>
+
+<!--
+
+You may be wondering where the 
+!!click
+R
+!!click
+F
+!!click
+C
+is?
+
+-->
+
+---
+transition: fade
+layout: section
+---
+
+<QRCode size="500" value="https://github.com/emberjs/rfcs/pull/965"></QRCode>
+
+<div style="position: fixed; right: 2rem;">
+https://github.com/emberjs/rfcs/pull/965
+</div>
+
+<!--
+I put up a draft here
+-->
+
+---
+transition: fade
 layout: center
 ---
 
-# Some fun things 
-
-<div v-click>
 
 <h2 style="transform: rotate(-4deg); line-height: 2.5rem">
 ember-data-resources is not ember-data resources ::<br> 
 resources on resources, using resources to fetch resources with your resources
 </h2>
 
-</div>
-
 <!-- 
 
-and the word "resources" may be a bit overloaded, depending on your background, 
+the word "resources" may be a bit overloaded, depending on your background, 
 
 !! click
 
-I don't know if you anyone saw in the discord chat yesterady, but we had some goofy word play.
-
-
-but here are some somewhat related fun things 
+ember-data-resources is an example project that show how you can use resources to wrap ember-data for on-demand GETting of non-primary data.
 
 -->
 
@@ -53,6 +94,8 @@ The javascript resources have a similar purpose -- they provide
 a means to manage the lifetime of an object.
 
 Ember and starbeam Resources provide reactive implementations of this concept, and it may make sense for the implementations to build on top of JavaScript resources once they're shipped.
+
+Despite "resource" being severely overloaded, the alignment in behavior here does strengthen the word-choice.
 
 
 
@@ -103,7 +146,7 @@ need to worry about potential cleanup
 - Integrate Starbeam deep within `@glimmer/*` (changing the _implementation_ of @glimmer/tracking)
 - ensure parity between Starbeam and `ember-resources`
 - codemods
-- RFCs
+- Continue RFCs
 
 </v-clicks>
 

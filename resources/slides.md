@@ -64,6 +64,23 @@ Tools used for making this presentation
 
 Resources on Resources: the missing primitive.
 
+<div v-click style="position: fixed; top: 2rem; left: 2rem;">
+  <img src="/pages/bees.gif">
+  <h2 style="
+    position: fixed; 
+    top: 27rem; 
+    left: 10rem;
+    text-shadow: 4px 4px 5px black;
+    font-size: 6rem !important; 
+    font-weight: bold;"
+    >
+  RESOURCES</h2>
+</div>
+
+<div v-click style="position: fixed; top: 2rem; left: 6rem;">
+    <img style="width: 700px" src="/pages/everything-is-nail.jpeg">
+</div>
+
 <div class="abs-br m-6 flex gap-2">
   <a href="https://github.com/NullVoxPopuli/presentation-2023-resources" target="_blank" alt="GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
@@ -79,11 +96,15 @@ This is Resources squared, or otherwise
 
 (hopefully) 
 
-resources on resources, what I believe to be a core primitive when it comes to reactivity.
+!! click
+(bees gif)
 
-(not just for Ember)
+!! click
+but also, not everything is a nail, nor are resources the hammer.
+Resources are more like the metal that we use craft better tools out of.
 
-But first a quick introduction of myself 
+
+Before diving in -- a quick introduction of myself 
 
 -->
 
