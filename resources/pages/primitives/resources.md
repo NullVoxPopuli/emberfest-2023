@@ -756,7 +756,55 @@ rendering, testing, and maintenance are easier.
 
 -->
 
+---
+transition: fade
+layout: two-cols 
+---
 
+<div class="slide-category">What's a Resource?</div> 
+<div class="related-note">Resources derive data</div>
+
+::left::
+
+```js
+export default class Demo extends Component {
+    @tracked count = 0;
+
+    updateCount = 
+      (input) => this.count = input * 2;
+}
+```
+```hbs
+<div {{did-update this.updateCount @input}}>
+</div>
+
+{{this.count}}
+```
+
+::right::
+
+```gjs
+export default class Demo extends Component {
+    get count() {
+        return this.args.input * 2;
+    }
+
+    <template>
+      {{this.count}}
+    </template>
+}
+```
+
+<!--
+First, what is derived data?
+
+Practically, it's defining what data *is*, rather than defining reactions.
+
+For example, on the left here is a reaction, an effect.
+This way of managing data will cause extra renders, and performance loss.
+
+On the right, we have the efficient data derivation. A getter.
+-->
 
 ---
 transition: fade
