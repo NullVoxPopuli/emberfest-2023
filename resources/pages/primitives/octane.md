@@ -196,9 +196,7 @@ modifiers
 
 or components?
 
-We'll come back to these later, and yesterday, 
-you may have seen something in the Keynote about why they may be coming later in this presentation.
-
+fear not, we'll come back to these momentarily
 
 For components, I am going to propose that those are not primitives at all.
 

@@ -10,7 +10,7 @@ layout: section
 I only have one disclaimer about the things I'm about to talk about.
 
 Mostly, there are gaps in documentation today 
-- we need more learning materials on proper derived data, including resources, patterns, (in and outside of ember)
+- we need more learning materials on proper derived data, including resources, patterns with derived data and resources
 - we need to actually implement Starbeam for Ember
 
 For those that stick to only the what the official documentation recommends, this may all feel experimental and out of reach.

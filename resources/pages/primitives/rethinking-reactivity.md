@@ -58,6 +58,7 @@ supporting plain javascript functions as a reactive primitive,
 _as well as their arguments_, 
 is **essential** for reducing the number of abstractions folks need to learn when they learn ember.
 
+
 !! click
 
 for class-based-helpers, we can use use a new primitive -- 
@@ -117,6 +118,9 @@ and allow us to use reactive values everywhere -- not just classess
 
 functions, we can leave as-is, 
 because they can directly access the state on cells -- these will auto-track and are completely transparent to the renderer -- just like getters in classes.
+
+These two things bring us in to great alignment with the broader javascript ecosystem as well.
+Maybe you've heard of Signals or Runes?
 
 !! click
 

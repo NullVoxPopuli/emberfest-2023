@@ -114,17 +114,7 @@ but I did test this with one of the more complicated QR codes in here.
 
 !! click, and then click play on the video
 
-soooo... since we all just got back from lunch, some of ya'll may have food-induced sleepiness.
-
-and since some QR codes may be hard to scan from the back of the room (like the one in the video here)
-
-I encourage and welcome folks to stand up, shift around, 
-
-get closer to the screens 
- while I'm talking about things.
-
-
-If you're watching live online, you also may want to have your phone out
+If you're someone who likes doing things while doing things, feel free to get your phone out and scan any of the QR codes during the following slides
 
 Though, the QR Codes are supplemental information, so no one needs to feel like they are missing out by not scanning the QR Codes.
 

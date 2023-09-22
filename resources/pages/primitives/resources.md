@@ -134,7 +134,7 @@ We can set up an interval, and clean up that interval when the resource is clean
 
 !! click
 
-In this case, it's a small component.
+In this case, it's a small component -- but cleanup is block-scoped.
 
 !! click
 
